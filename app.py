@@ -34,7 +34,7 @@ with gr.Blocks(title="RAG QA — Qwen3-4B") as demo:
 
     chatbot = gr.ChatInterface(
         fn=respond,
-        chatbot=gr.Chatbot(height=480, show_label=False),
+        chatbot=gr.Chatbot(height=480, show_label=False, type="messages"),
         textbox=gr.Textbox(
             placeholder="Ask a question about your documents...",
             container=False,
@@ -46,9 +46,6 @@ with gr.Blocks(title="RAG QA — Qwen3-4B") as demo:
             "What does the document say about [topic]?",
         ],
         cache_examples=False,
-        retry_btn=None,
-        undo_btn="↩ Undo",
-        clear_btn="🗑 Clear",
     )
 
 if __name__ == "__main__":
